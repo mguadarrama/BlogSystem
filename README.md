@@ -63,7 +63,7 @@ cd BlogApi
 dotnet run
 ```
 
-The API will be available at `https://localhost:5001` and `http://localhost:5000`.
+The API will be available at `http://localhost:5000/swagger/index.html` 
 
 ## Testing Instructions
 
@@ -220,3 +220,27 @@ The code demonstrates:
 - Domain-Driven Design concepts
 - Performance optimization awareness
 - Modern .NET development practices 
+
+## Running the Application
+
+### Using Docker (Recommended)
+
+1. Make sure you have Docker and Docker Compose installed on your system.
+
+2. Build and start the containers:
+   ```bash
+   docker-compose up --build
+   ```
+
+3. The API will be available at:
+   - http://localhost:8080
+   - Swagger UI: http://localhost:8080/swagger
+
+4. To stop the application:
+   ```bash
+   docker-compose down
+   ```
+
+### Running Locally
+
+[Previous local running instructions remain the same] 
