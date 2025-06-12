@@ -37,6 +37,12 @@ public class Program
         // Add Swagger
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
+        builder.Services.AddControllers(options =>
+        {
+            options.RespectBrowserAcceptHeader = true; // honors Accept header
+        })
+         .AddXmlSerializerFormatters(); // adds XML output support
+
 
         var app = builder.Build();
 
