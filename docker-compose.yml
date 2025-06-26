@@ -5,6 +5,8 @@ services:
     build:
       context: .
       dockerfile: BlogApi/Dockerfile
+      args:
+        - INSTALL_SQL_SERVER=false
     ports:
       - "8080:80"
     environment:

@@ -223,7 +223,11 @@ The code demonstrates:
 
 ## Running the Application
 
-### Using Docker (Recommended)
+### Using Docker
+
+#### Option 1: Separate Containers (Recommended for Production)
+
+This approach runs the API and SQL Server in separate containers, providing better scalability and maintenance.
 
 1. Make sure you have Docker and Docker Compose installed on your system.
 
@@ -239,6 +243,26 @@ The code demonstrates:
 4. To stop the application:
    ```bash
    docker-compose down
+   ```
+
+#### Option 2: All-in-One Container with SQL Server (Development)
+
+This approach runs both the API and SQL Server in a single container, which is more convenient for development.
+
+1. Make sure you have Docker and Docker Compose installed on your system.
+
+2. Build and start the container:
+   ```bash
+   docker-compose -f docker-compose.sql.yml up --build
+   ```
+
+3. The API will be available at:
+   - http://localhost:8080
+   - Swagger UI: http://localhost:8080/swagger
+
+4. To stop the application:
+   ```bash
+   docker-compose -f docker-compose.sql.yml down
    ```
 
 ### Running Locally

@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: BlogApi/Dockerfile
+      args:
+        - INSTALL_SQL_SERVER=true
+    ports:
+      - "8080:80"
+      - "1433:1433"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=localhost;Database=BlogDb;User Id=sa;Password=YourStrong!Passw0rd;TrustServerCertificate=True
+    volumes:
+      - sqldata:/var/opt/mssql
+
+volumes:
+  sqldata: 
